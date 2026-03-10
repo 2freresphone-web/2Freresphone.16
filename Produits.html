@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Catalogue Produits - 2Frères Phone</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f5f5f5;
+}
+
+/* HEADER */
+
+header{
+background:black;
+color:#c9a227;
+text-align:center;
+padding:15px;
+font-size:22px;
+font-weight:bold;
+}
+
+/* SEARCH */
+
+.search-box{
+padding:15px;
+text-align:center;
+}
+
+.search-box input{
+width:90%;
+padding:10px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+/* CATEGORIES */
+
+.categories{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+padding:15px;
+}
+
+.categorie{
+background:white;
+padding:12px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+cursor:pointer;
+transition:0.2s;
+}
+
+.categorie:hover{
+transform:scale(1.05);
+}
+
+.categorie i{
+font-size:25px;
+color:#c9a227;
+}
+
+.categorie p{
+margin:5px 0;
+font-weight:bold;
+}
+
+/* PRODUITS */
+
+.catalogue{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+gap:15px;
+padding:15px;
+}
+
+.produit{
+background:white;
+border-radius:12px;
+padding:10px;
+text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.produit img{
+width:100%;
+border-radius:10px;
+}
+
+.produit h3{
+font-size:15px;
+margin:8px 0;
+}
+
+.produit p{
+font-weight:bold;
+color:#c9a227;
+}
+
+.btn-whatsapp{
+display:inline-block;
+margin-top:6px;
+background:#25D366;
+color:white;
+padding:7px 10px;
+border-radius:7px;
+text-decoration:none;
+font-size:13px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<header>
+Catalogue Produits
+</header>
+
+
+<!-- RECHERCHE -->
+
+<div class="search-box">
+
+<input type="text" id="searchInput" placeholder="Rechercher un produit...">
+
+</div>
+
+
+<!-- CATEGORIES -->
+
+<div class="categories">
+
+<div class="categorie" data-categorie="all">
+<i class="fa-solid fa-layer-group"></i>
+<p>Tous</p>
+</div>
+
+<div class="categorie" data-categorie="coques">
+<i class="fa-solid fa-mobile"></i>
+<p>Coques</p>
+</div>
+
+<div class="categorie" data-categorie="glaces">
+<i class="fa-solid fa-shield"></i>
+<p>Glaces</p>
+</div>
+
+<div class="categorie" data-categorie="audio">
+<i class="fa-solid fa-headphones"></i>
+<p>Audio</p>
+</div>
+
+<div class="categorie" data-categorie="chargeurs">
+<i class="fa-solid fa-bolt"></i>
+<p>Chargeurs</p>
+</div>
+
+<div class="categorie" data-categorie="support">
+<i class="fa-solid fa-car"></i>
+<p>Support</p>
+</div>
+
+</div>
+
+
+<!-- PRODUITS -->
+
+<div class="catalogue" id="catalogue">
+
+
+<div class="produit" data-categorie="audio">
+
+<img src="images/audio/airpods.jpg">
+
+<h3>AirPods Pro</h3>
+
+<p>2500 DA</p>
+
+<a href="https://wa.me/qr/EQYAAQQKKXBUN1" class="btn-whatsapp">Commander</a>
+
+</div>
+
+<div class="produit" data-categorie="audio">
+
+<img src="images/audio/hocoeq22.jpeg">
+
+<h3>Hoco Eq22 ANC ENC</h3>
+
+<p>4500 DA</p>
+
+<a href="https://wa.me/qr/EQYAAQQKKXBUN1" class="btn-whatsapp">Commander</a>
+
+</div>
+
+<div class="produit" data-categorie="coques">
+
+<img src="images/coque/iphone14.jpg">
+
+<h3>Coque Antichoc iPhone 14</h3>
+
+<p>1500 DA</p>
+
+<a href="https://wa.me/qr/EQYAAQQKKXBUN1" class="btn-whatsapp">Commander</a>
+
+</div>
+
+
+<div class="produit" data-categorie="glaces">
+
+<img src="images/verre/iphone13.jpg">
+
+<h3>Verre Trempé iPhone 13</h3>
+
+<p>800 DA</p>
+
+<a href="https://wa.me/qr/EQYAAQQKKXBUN1" class="btn-whatsapp">Commander</a>
+
+</div>
+
+
+<div class="produit" data-categorie="chargeurs">
+
+<img src="images/chargeur/25w.jpg">
+
+<h3>Chargeur Fast 25W</h3>
+
+<p>2200 DA</p>
+
+<a href="https://wa.me/qr/EQYAAQQKKXBUN1" class="btn-whatsapp">Commander</a>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+/* FILTRE CATEGORIES */
+
+const categories = document.querySelectorAll(".categorie");
+const produits = document.querySelectorAll(".produit");
+
+categories.forEach(cat => {
+
+cat.addEventListener("click", () => {
+
+let categorie = cat.getAttribute("data-categorie");
+
+produits.forEach(prod => {
+
+if(categorie === "all" || prod.getAttribute("data-categorie") === categorie){
+
+prod.style.display="block";
+
+}else{
+
+prod.style.display="none";
+
+}
+
+});
+
+});
+
+});
+
+
+/* RECHERCHE */
+
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", function(){
+
+let filter = searchInput.value.toLowerCase();
+
+produits.forEach(function(p){
+
+let text = p.innerText.toLowerCase();
+
+p.style.display = text.includes(filter) ? "block" : "none";
+
+});
+
+});
+
+</script>
+
+
+</body>
+</html>

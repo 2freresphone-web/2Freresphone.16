@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>2Frères Phone - Smartphone</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+* {margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Roboto,system-ui,-apple-system,sans-serif;}
+body{background:#ffffff;min-height:100vh;display:flex;justify-content:center;align-items:center;padding:15px;}
+.phone{width:100%;max-width:380px;background:#1a1a1a;border-radius:40px;box-shadow:0 30px 50px rgba(0,0,0,0.2),0 0 0 8px #e0e0e0;position:relative;padding:15px 12px 20px 12px;}
+.phone::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:140px;height:28px;background:#1a1a1a;border-bottom-left-radius:20px;border-bottom-right-radius:20px;z-index:10;}
+.screen{background-image:url('11017.png');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#2c3e50;border-radius:30px;overflow:hidden;position:relative;box-shadow:inset 0 0 20px rgba(0,0,0,0.5);isolation:isolate;}
+.screen::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.3);backdrop-filter:blur(2px);z-index:1;pointer-events:none;}
+.screen-content{position:relative;z-index:2;padding:20px 15px 25px 15px;min-height:650px;display:flex;flex-direction:column;}
+.status-bar{display:flex;justify-content:space-between;color:white;font-size:0.85rem;font-weight:500;padding:0 5px 10px 5px;text-shadow:0 1px 3px black;}
+.app-title{text-align:center;color:white;font-size:1.8rem;font-weight:bold;margin:10px 0 20px 0;text-shadow:0 2px 5px rgba(0,0,0,0.7);letter-spacing:1px;}
+.app-subtitle{text-align:center;color:rgba(255,255,255,0.9);font-size:1rem;margin-bottom:30px;text-shadow:0 1px 3px black;background:rgba(0,0,0,0.3);padding:5px 15px;border-radius:30px;display:inline-block;margin-left:auto;margin-right:auto;}
+.app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px 10px;margin-top:10px;flex:1;}
+.app-item{display:flex;flex-direction:column;align-items:center;text-decoration:none;transition:transform 0.2s ease;}
+.app-item:hover{transform:scale(1.05);}
+.app-icon{width:60px;height:60px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 10px 20px rgba(0,0,0,0.3);margin-bottom:8px;transition:all 0.2s;}
+/* Icônes style iPhone avec couleurs officielles */
+.app-item.maps .app-icon{background:#34a853;color:white;}
+.app-item.instagram .app-icon{background:linear-gradient(45deg,#feda75,#d62976,#962fbf,#4f5bd5);color:white;}
+.app-item.tiktok .app-icon{background:#000;color:white;}
+.app-item.snapchat .app-icon{background:#FFFC00;color:#000;}
+.app-item.whatsapp .app-icon{background:#25D366;color:white;}
+/* Icône Menu Produits style chariot orange */
+.app-item.produits .app-icon{background:#ff5722;color:white;}
+.app-label{font-size:0.8rem;font-weight:500;text-align:center;text-shadow:0 1px 3px black;max-width:80px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:rgba(0,0,0,0.4);padding:3px 8px;border-radius:20px;backdrop-filter:blur(2px);}
+.copyright{text-align:center;color:rgba(255,255,255,0.5);font-size:0.7rem;margin-top:15px;}
+@media(max-width:400px){.app-grid{gap:15px 5px}.app-icon{width:55px;height:55px;font-size:1.8rem;}}
+</style>
+</head>
+<body>
+<div class="phone">
+<div class="screen">
+<div class="screen-content">
+
+<div class="status-bar">
+<span>9:41</span>
+<span><i class="fas fa-signal"></i> <i class="fas fa-wifi"></i> <i class="fas fa-battery-full"></i></span>
+</div>
+
+<div class="app-title">2FRÈRES PHONE</div>
+<div class="app-subtitle">هواتف نقالة واكسسوارات</div>
+
+<div class="app-grid">
+<!-- Google Maps -->
+<a href="https://maps.app.goo.gl/LxQUUp2HKFrz4U2H9" target="_blank" class="app-item maps">
+<div class="app-icon"><i class="fas fa-map-marker-alt"></i></div>
+<span class="app-label">Maps</span>
+</a>
+<!-- Instagram -->
+<a href="https://www.instagram.com/2freresphone.16?igsh=MTJxdjBmN3hhNzMzbQ==" target="_blank" class="app-item instagram">
+<div class="app-icon"><i class="fab fa-instagram"></i></div>
+<span class="app-label">Instagram</span>
+</a>
+<!-- TikTok -->
+<a href="https://www.tiktok.com/@2freresphone.16?_r=1&_t=ZS-94MYi2VHjo9" target="_blank" class="app-item tiktok">
+<div class="app-icon"><i class="fab fa-tiktok"></i></div>
+<span class="app-label">TikTok</span>
+</a>
+<!-- Snapchat -->
+<a href="https://www.snapchat.com/add/freres_phone2?share_id=IngMTMLtLzk&locale=fr-FR" target="_blank" class="app-item snapchat">
+<div class="app-icon"><i class="fab fa-snapchat"></i></div>
+<span class="app-label">Snapchat</span>
+</a>
+<!-- WhatsApp -->
+<a href="https://wa.me/qr/EQYAAQQKKXBUN1" target="_blank" class="app-item whatsapp">
+<div class="app-icon"><i class="fab fa-whatsapp"></i></div>
+<span class="app-label">WhatsApp</span>
+</a>
+<!-- Menu Produits -->
+<a href="Produits.html" class="app-item produits">
+<div class="app-icon"><i class="fas fa-shopping-cart"></i></div>
+<span class="app-label">Produits</span>
+</a>
+</div>
+
+<div class="copyright">© 2025 2freresphone.16</div>
+
+</div>
+</div>
+</div>
+
+<script>
+(function() {
+const screen = document.querySelector('.screen');
+const img = new Image();
+img.src = '11017.png';
+img.onload = () => {};
+img.onerror = () => {screen.style.backgroundImage='linear-gradient(135deg,#667eea,#764ba2)';screen.style.backgroundSize='cover';};
+})();
+</script>
+</body>
+</html>
