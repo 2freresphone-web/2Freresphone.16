@@ -18,8 +18,6 @@ margin:0;
 background:#f5f5f5;
 }
 
-/* HEADER */
-
 header{
 background:black;
 color:#c9a227;
@@ -28,8 +26,6 @@ padding:15px;
 font-size:22px;
 font-weight:bold;
 }
-
-/* SEARCH */
 
 .search-box{
 padding:15px;
@@ -43,8 +39,6 @@ border-radius:8px;
 border:1px solid #ccc;
 font-size:16px;
 }
-
-/* CATEGORIES */
 
 .categories{
 display:grid;
@@ -76,8 +70,6 @@ color:#c9a227;
 margin:5px 0;
 font-weight:bold;
 }
-
-/* PRODUITS */
 
 .catalogue{
 display:grid;
@@ -124,24 +116,15 @@ font-size:13px;
 
 </head>
 
-
 <body>
 
 <header>
 Catalogue Produits
 </header>
 
-
-<!-- RECHERCHE -->
-
 <div class="search-box">
-
 <input type="text" id="searchInput" placeholder="Rechercher un produit...">
-
 </div>
-
-
-<!-- CATEGORIES -->
 
 <div class="categories">
 
@@ -178,108 +161,70 @@ Catalogue Produits
 </div>
 
 
-<!-- PRODUITS -->
-
 <div class="catalogue" id="catalogue">
 
 
 <div class="produit" data-categorie="audio">
-
 <img src="airpods.jpg">
-
 <h3>AirPods Pro</h3>
-
 <p>2500 DA</p>
-
 <a href="https://wa.me/qr/EQYAAQQKKXBUN1" class="btn-whatsapp">Commander</a>
-
 </div>
 
-<div class="produit" data-categorie="audio">
 
+<div class="produit" data-categorie="audio">
 <img src="hocoeq22.jpeg">
-
 <h3>Hoco Eq22 ANC ENC</h3>
-
 <p>4500 DA</p>
-
-</div>
-  
 <a href="https://wa.me/qr/EQYAAQQKKXBUN1" class="btn-whatsapp">Commander</a>
-  
-<div class="produit" data-categorie="audio">
+</div>
 
+
+<div class="produit" data-categorie="audio">
 <img src="hocoew72anc.jpeg">
-
 <h3>Hoco Ew72 ANC</h3>
-
 <p>4500 DA</p>
-
+<a href="https://wa.me/qr/EQYAAQQKKXBUN1" class="btn-whatsapp">Commander</a>
 </div>
+
 
 <div class="produit" data-categorie="audio">
-
 <img src="hocoeq12.jpeg">
-
 <h3>Hoco EQ12</h3>
-
 <p>3900 DA</p>
-
 <a href="https://wa.me/qr/EQYAAQQKKXBUN1" class="btn-whatsapp">Commander</a>
-
 </div>
 
-</div>
 
 <div class="produit" data-categorie="coques">
-
-<img src="images/coque/iphone14.jpg">
-
+<img src="iphone14.jpg">
 <h3>Coque Antichoc iPhone 14</h3>
-
 <p>800 DA</p>
-
 <a href="https://wa.me/qr/EQYAAQQKKXBUN1" class="btn-whatsapp">Commander</a>
-
 </div>
+
 
 <div class="produit" data-categorie="audio">
-
 <img src="h30i.jpeg">
-
 <h3>Soundcore by Anker H30i</h3>
-
 <p>8600 DA</p>
-
 <a href="https://wa.me/qr/EQYAAQQKKXBUN1" class="btn-whatsapp">Commander</a>
-
-</div>
 </div>
 
 
 <div class="produit" data-categorie="glaces">
-
-<img src="images/verre/iphone13.jpg">
-
+<img src="iphone13.jpg">
 <h3>Verre Trempé iPhone 13</h3>
-
 <p>500 DA</p>
-
 <a href="https://wa.me/qr/EQYAAQQKKXBUN1" class="btn-whatsapp">Commander</a>
-
 </div>
 
 
 <div class="produit" data-categorie="chargeurs">
-
-<img src=25w.jpeg">
-
-<h3>Chargeur Complet Samsungsuperfast 25w</h3>
-
+<img src="25w.jpeg">
+<h3>Chargeur Complet Samsung Super Fast 25W</h3>
 <p>3500 DA</p>
-
 <a href="https://wa.me/qr/EQYAAQQKKXBUN1" class="btn-whatsapp">Commander</a>
-
 </div>
 
 
@@ -287,8 +232,6 @@ Catalogue Produits
 
 
 <script>
-
-/* FILTRE CATEGORIES */
 
 const categories = document.querySelectorAll(".categorie");
 const produits = document.querySelectorAll(".produit");
@@ -302,13 +245,9 @@ let categorie = cat.getAttribute("data-categorie");
 produits.forEach(prod => {
 
 if(categorie === "all" || prod.getAttribute("data-categorie") === categorie){
-
 prod.style.display="block";
-
 }else{
-
 prod.style.display="none";
-
 }
 
 });
@@ -316,9 +255,6 @@ prod.style.display="none";
 });
 
 });
-
-
-/* RECHERCHE */
 
 const searchInput = document.getElementById("searchInput");
 
@@ -337,7 +273,6 @@ p.style.display = text.includes(filter) ? "block" : "none";
 });
 
 </script>
-
 
 </body>
 </html>
